@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Truco Argento</title>
+		<meta charset='utf-8' />
+		<link href='http://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	</head>
+	<body class="game">
+		<div class="game-wrapper">
+			<div class="game-panel">
+				<div class="game-header">
+					<h1>Truco argento</h1>
+				</div>
+				<table id="game-score">
+					<thead>
+						<tr>
+							<th contenteditable="true" class="player-one-name human-name"></th>
+							<th class="player-two-name"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="player-one-points"></td>
+							<td class="player-two-points"></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="game-action">
+					<fieldset id="cantos" class="cantos-panel">
+						<legend>Cantos</legend>
+						<div class="label-cantos label-cantos--first">Para la mentira ...</div>
+						<input type="button" value="Envido"       id="Envido"         class="canto btn btn-primary"  data-envido='E' />
+						<input type="button" value="Real Envido"  id="RealEnvido"     class="canto btn btn-success"  data-envido='R'/>
+						<input type="button" value="Falta Envido" id="FaltaEnvido"    class="canto btn btn-inverse"  data-envido='F'/>
+						<div class="label-cantos">Para el rabón ...</div>
+						<input type="button" value="Me voy al mazo"    id="IrAlMazo"   class="btn"/>
+						<input type="button" value="Truco"           id="Truco"   class="cantot btn btn-primary" data-truco='T' />
+						<input type="button" value="Quiero re Truco" id="reTruco" class="cantot btn btn-success" data-truco='RT' />
+						<input type="button" value="Quiero vale 4"   id="vale4"   class="cantot btn btn-inverse" data-truco='V' />
+						<div class="label-cantos label-cantos--SN">Mi respuesta ...</div>
+						<input type="button" value="Quiero"    id="Quiero"   class="boton btn"/>
+						<input type="button" value="No Quiero" id="NoQuiero" class="boton btn" />
+					</fieldset>
+				</div>
+				<h2 class="log-title">Gameplay</h2>
+				<div id="log"></div>
+			</div>
+			<div class="game-main" style="position: relative;">
+				<div id="configuraciones" class="box box--collapsable">
+					<div class="box-title">
+						<img src="images/gear.png" alt="Acceso a las configuraciones" title="Acceso a las configuraciones" width="32" /> 
+					</div>
+					<div class="box-content">
+						<input type="checkbox" id="cbxAudio" checked="checked" />
+						<label for="cbxAudio">Sonido</label>
+						<input type="checkbox" id="cbxDebug" checked="" />
+						<label for="cbxDebug">Debug</label>
+						<div>
+							<div class="label">Jugar a:</div>
+							<input type="radio" value="15" id="rdb15" class="rbd-ptos-partida" checked="checked" name="pto" />
+							<label for="rdb10">15 pts.</label>
+							<input type="radio" value="30" id="rdb30" class="rbd-ptos-partida" name="pto" />
+							<label for="rdb10">30 pts.</label>
+						</div>
+					</div>
+				</div>
+				<div id="player-two" class="player">
+					<h3 class="player-content">
+						<span class="player-name"></span>
+						<div class="player-voice"></div>
+					</h3>
+					<ul class="player-cards" ></ul>	
+				</div>
+				<div class="game-deck" >
+					<div class="card card-1"></div>
+					<div class="card card-2"></div>
+					<div class="card card-3"></div>
+					<div class="card card-4"></div>
+					<div class="card card-5"></div>
+					<div class="card card-6"></div>
+				</div>
+				<div id="player-one" class="player">
+					<ul class="player-cards"></ul>	
+					<div class="player-envite-points"></div>
+					<h3 class="player-content">
+						<div class="player-voice"></div>
+						<span contenteditable="true" class="player-name human-name"></span>
+					</h3>
+				</div>
+			</div>
+			<div class="game-footer">
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/truco.js"></script>
+	<script type="text/javascript" src="js/ia.js"></script>
+</html>
